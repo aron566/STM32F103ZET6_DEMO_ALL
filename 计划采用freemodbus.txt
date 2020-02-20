@@ -1,0 +1,8 @@
+freemodbus 串口接收回调待加入中断中 
+
+涉及portserial.c文件 和portserial_m.c文件
+
+
+在进行测试   参考rtt文档 和  freemodbusREADME.md
+
+///内含使用定时器接收串口不定长数据
