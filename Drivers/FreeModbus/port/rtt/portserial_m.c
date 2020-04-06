@@ -56,7 +56,7 @@ static void prvvUARTTxReadyISR(void);
 static void prvvUARTRxISR(void);
 static BOOL serial_rx_ind(UART_HandleTypeDef *dev, uint16_t size);
 static void serial_soft_trans_irq(void const *parameter);
-
+void Master_Serial_rx_ind(uint16_t size);
 /* ----------------------- Start implementation -----------------------------*/
 BOOL xMBMasterPortSerialInit(UCHAR ucPORT, ULONG ulBaudRate, UCHAR ucDataBits,
         eMBParity eParity)
@@ -223,5 +223,8 @@ static BOOL serial_rx_ind(UART_HandleTypeDef *dev, uint16_t size) {
     prvvUARTRxISR();
     return TRUE;
 }
-
+void Master_Serial_rx_ind(uint16_t size)
+{
+    serial_rx_ind(huart_x ,size);
+}
 #endif

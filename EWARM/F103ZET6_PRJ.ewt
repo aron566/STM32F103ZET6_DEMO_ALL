@@ -1394,6 +1394,15 @@
                 <name>$PROJ_DIR$\..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_uart.c</name>
             </file>
         </group>
+        <group>
+            <name>USART</name>
+            <file>
+                <name>$PROJ_DIR$\..\Drivers\USART\CircularQueue.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\Drivers\USART\UART_Port.c</name>
+            </file>
+        </group>
     </group>
     <group>
         <name>Middlewares</name>

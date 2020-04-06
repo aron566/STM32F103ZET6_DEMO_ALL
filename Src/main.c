@@ -29,8 +29,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
-
+#include "UART_Port.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -112,8 +111,7 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start_IT(&htim2);/*启动定时器2中断*/
-  HAL_UART_Receive_DMA(&huart1, (uint8_t*)Uart1_RxBuff, 128);
+  Uart_Port_Init();
   /* USER CODE END 2 */
  
   /* Call init function for freertos objects (in freertos.c) */

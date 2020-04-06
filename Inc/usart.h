@@ -37,6 +37,7 @@ extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN Private defines */
+
 /*
 使用定时器接收不定长数据
 #define REC_LENGTH      1

@@ -51,9 +51,6 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
 
-uint8_t Uart1_RxBuff[128] = {0};
-uint8_t Uart1_Rx_Cnt = 0;
-uint8_t aRxBuffer;
 /* USER CODE END Variables */
 osThreadId IWDGHandle;
 uint32_t IWDGBuffer[ 128 ];
@@ -222,7 +219,7 @@ void StartTask03(void const * argument)
 /* USER CODE BEGIN Application */
 
 /*
-//¶¨Ê±Æ÷ÊµÏÖ²»¶¨³¤Êý¾Ý½ÓÊÕ
+//Ç¿¶¨Òå £¬ ¶¨Ê±Æ÷ÊµÏÖ²»¶¨³¤Êý¾Ý½ÓÊÕ
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)//ÓÃ»§µÄ»Øµ÷º¯Êý£º½ÓÊÕÍê³É´¦Àí
 {
     if(huart->Instance == USART3) // ´®¿Ú3½ÓÊÕÍê³É»Øµ÷
@@ -239,35 +236,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)//ÓÃ»§µÄ»Øµ÷º¯Êý£º½ÓÊÕÍê³
     }
 }
 */
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)//ÓÃ»§µÄ»Øµ÷º¯Êý£º½ÓÊÕÍê³É´¦Àí
-{
-  /* Prevent unused argument(s) compilation warning */
-  UNUSED(huart);
-  /* NOTE: This function should not be modified, when the callback is needed,
-           the HAL_UART_RxCpltCallback could be implemented in the user file
-   */
-  uint8_t	cAlmStr[] = "Êý¾ÝÒç³ö(´óÓÚ256)\r\n";
-  
-  if(Uart1_Rx_Cnt >= 128)  //Òç³öÅÐ¶Ï
-	{
-		Uart1_Rx_Cnt = 0;
-		memset(Uart1_RxBuff,0x00,sizeof(Uart1_RxBuff));
-		HAL_UART_Transmit_DMA(&huart1, (uint8_t *)cAlmStr, sizeof(cAlmStr));	
-	}
-	else
-	{
-		Uart1_RxBuff[Uart1_Rx_Cnt++] = aRxBuffer;   //½ÓÊÕÊý¾Ý×ª´æ
-	
-		if((Uart1_RxBuff[Uart1_Rx_Cnt-1] == 0x0A)&&(Uart1_RxBuff[Uart1_Rx_Cnt-2] == 0x0D)) //ÅÐ¶Ï½áÊøÎ»
-		{
-			HAL_UART_Transmit(&huart1, (uint8_t *)&Uart1_RxBuff, Uart1_Rx_Cnt,0xFFFF); //½«ÊÕµ½µÄÐÅÏ¢·¢ËÍ³öÈ¥
-			Uart1_Rx_Cnt = 0;
-			memset(Uart1_RxBuff,0x00,sizeof(Uart1_RxBuff)); //Çå¿ÕÊý×é
-		}
-	}
-	HAL_UART_Receive_IT(&huart1, (uint8_t *)&aRxBuffer, 1);   //ÔÙ¿ªÆô½ÓÊÕÖÐ¶Ï
 
-}
 /* USER CODE END Application */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

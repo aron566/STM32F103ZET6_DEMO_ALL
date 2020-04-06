@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "G:\C_file\F103ZET6_PRJ_IR_TEST\EWARM\settings\F103ZET6_PRJ.F103ZET6_PRJ.general.xcl" --backend -f "G:\C_file\F103ZET6_PRJ_IR_TEST\EWARM\settings\F103ZET6_PRJ.F103ZET6_PRJ.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "G:\C_file\GitHub_FILE\F103ZET6_PRJ_DMA_SERIAL_BUFF\EWARM\settings\F103ZET6_PRJ.F103ZET6_PRJ.general.xcl" --backend -f "G:\C_file\GitHub_FILE\F103ZET6_PRJ_DMA_SERIAL_BUFF\EWARM\settings\F103ZET6_PRJ.F103ZET6_PRJ.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "G:\C_file\F103ZET6_PRJ_IR_TEST\EWARM\settings\F103ZET6_PRJ.F103ZET6_PRJ.general.xcl" "--debug_file=%~1" --backend -f "G:\C_file\F103ZET6_PRJ_IR_TEST\EWARM\settings\F103ZET6_PRJ.F103ZET6_PRJ.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "G:\C_file\GitHub_FILE\F103ZET6_PRJ_DMA_SERIAL_BUFF\EWARM\settings\F103ZET6_PRJ.F103ZET6_PRJ.general.xcl" "--debug_file=%~1" --backend -f "G:\C_file\GitHub_FILE\F103ZET6_PRJ_DMA_SERIAL_BUFF\EWARM\settings\F103ZET6_PRJ.F103ZET6_PRJ.driver.xcl" 
 
 @echo off 
 :end

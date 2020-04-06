@@ -25,7 +25,7 @@
 #include "task.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "usart.h"
+#include "UART_Port.h"/*外部接口*/
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -337,7 +337,7 @@ void USART1_IRQHandler(void)
   /* USER CODE END USART1_IRQn 0 */
   HAL_UART_IRQHandler(&huart1);
   /* USER CODE BEGIN USART1_IRQn 1 */
-  USER_UART_IRQHandler(&huart1);//自定义处理串口空闲
+  USER_UART_IRQHandler(&huart1);
   /* USER CODE END USART1_IRQn 1 */
 }
 
@@ -351,7 +351,7 @@ void USART2_IRQHandler(void)
   /* USER CODE END USART2_IRQn 0 */
   HAL_UART_IRQHandler(&huart2);
   /* USER CODE BEGIN USART2_IRQn 1 */
-  
+
   /* USER CODE END USART2_IRQn 1 */
 }
 

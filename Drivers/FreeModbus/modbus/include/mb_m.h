@@ -74,13 +74,13 @@ PR_BEGIN_EXTERN_C
  */
 typedef enum
 {
-    MB_MRE_NO_ERR,                  /*!< no error. */
-    MB_MRE_NO_REG,                  /*!< illegal register address. */
-    MB_MRE_ILL_ARG,                 /*!< illegal argument. */
-    MB_MRE_REV_DATA,                /*!< receive data error. */
-    MB_MRE_TIMEDOUT,                /*!< timeout error occurred. */
-    MB_MRE_MASTER_BUSY,             /*!< master is busy now. */
-    MB_MRE_EXE_FUN                  /*!< execute function error. */
+    MB_MRE_NO_ERR,                  /*!< no error. */                //正常，没错误
+    MB_MRE_NO_REG,                  /*!< illegal register address. *///寄存器、线圈或离散输入地址出错
+    MB_MRE_ILL_ARG,                 /*!< illegal argument. */        //入参格式有误
+    MB_MRE_REV_DATA,                /*!< receive data error. */      //接收数据出错
+    MB_MRE_TIMEDOUT,                /*!< timeout error occurred. */  //响应超时。主机在设定的时间内未收到从机响应。
+    MB_MRE_MASTER_BUSY,             /*!< master is busy now. */      //主机忙。在设定的时间内，请求没有被发送。
+    MB_MRE_EXE_FUN                  /*!< execute function error. */  //主机收到响应后，执行Modbus方法（功能）出错。
 } eMBMasterReqErrCode;
 /*! \ingroup modbus
  *  \brief TimerMode is Master 3 kind of Timer modes.

@@ -65,10 +65,7 @@ void Error_Handler(void);
 #define DS_Red_0_Pin GPIO_PIN_5
 #define DS_Red_0_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
-extern uint8_t Uart1_RxBuff[];
-extern uint8_t Uart1_Rx_Cnt;
-extern uint8_t aRxBuffer;
-extern void fault_test_by_div0(void);
+
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
